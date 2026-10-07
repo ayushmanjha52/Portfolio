@@ -1,12 +1,12 @@
 import Link from "next/link";
-import { BrainCircuit, Database, Factory, Network, Radar, Sun, type LucideIcon } from "lucide-react";
+import { BrainCircuit, Database, Factory, Network, Sun, Workflow, type LucideIcon } from "lucide-react";
 import { Section } from "@/components/ui/Section";
 import { buildDomains } from "@/data/domains";
 
 const icons: Record<(typeof buildDomains)[number]["icon"], LucideIcon> = {
   sun: Sun,
   factory: Factory,
-  radar: Radar,
+  workflow: Workflow,
   network: Network,
   brain: BrainCircuit,
   database: Database,

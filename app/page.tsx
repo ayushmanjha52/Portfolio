@@ -16,6 +16,8 @@ const personJsonLd = {
   name: profile.name,
   url: siteUrl,
   email: `mailto:${profile.email}`,
+  telephone: profile.phone,
+  image: `${siteUrl}${profile.photo.src}`,
   description: profile.pitch,
   knowsAbout: ["Machine learning", "Software engineering", "Electrical engineering", "Signal processing", "Data engineering"],
   alumniOf: { "@type": "CollegeOrUniversity", name: education[0].institution },

@@ -23,7 +23,6 @@ export const experience: Experience[] = [
       "Deployed real-time inference on a Jetson Nano edge device.",
     ],
     stack: ["Python", "PyTorch", "GNU Radio", "HackRF SDR", "NumPy", "SciPy"],
-    related: { label: "Earlier radar prototype", href: "/projects/radar-micro-motion" },
   },
   {
     role: "Data Intern",
@@ -60,21 +59,18 @@ export const journey: JourneyStage[] = [
   {
     id: "signal",
     title: "Signal Processing",
-    period: "2025 – 2026",
-    thesis: "RF returns, Doppler and time-frequency analysis: turning raw signal into features a model can use.",
-    evidence: [
-      { label: "Radar micro-motion prototype (MATLAB / Simulink)", href: "/projects/radar-micro-motion" },
-      { label: "Micro-Doppler CNN at VectraVision", href: "/#experience" },
-    ],
+    period: "2026",
+    thesis: "STFT, centroid and SVD features from RF signals: turning raw signal into input a deep-learning model can use.",
+    evidence: [{ label: "Micro-Doppler CNN · AI/ML intern at VectraVision", href: "/#experience" }],
   },
   {
     id: "data",
     title: "Data Analytics",
     period: "2026",
-    thesis: "ETL, data-quality checks, SQL and risk analytics on financial data.",
+    thesis: "ETL, data-quality checks, SQL, financial KPIs and clustering on company financials.",
     evidence: [
       { label: "Nifty 100 Financial Intelligence", href: "/projects/nifty100-financial-intelligence" },
-      { label: "Mutual Fund Analytics", href: "/projects/mutual-fund-analytics" },
+      { label: "Data intern at Bluestock Fintech", href: "/#experience" },
     ],
   },
   {

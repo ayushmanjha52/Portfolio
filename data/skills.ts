@@ -14,7 +14,6 @@ export const skillGroups: SkillGroup[] = [
       { name: "Java", where: "PlantDesk" },
       { name: "JavaScript", where: "BizForce" },
       { name: "C++" },
-      { name: "MATLAB", where: "Radar" },
       { name: "Solidity", where: "Local Energy Market" },
     ],
   },
@@ -27,6 +26,7 @@ export const skillGroups: SkillGroup[] = [
       { name: "XGBoost", where: "Local Energy Market" },
       { name: "CatBoost", where: "PdM model comparison" },
       { name: "PyTorch", where: "LSTM forecaster · VectraVision internship" },
+      { name: "LLM agents (Agents SDK, MCP)", where: "RescueGrid" },
       { name: "TensorFlow" },
       { name: "pandas", where: "Most Python work" },
       { name: "NumPy", where: "Most Python work" },
@@ -41,6 +41,8 @@ export const skillGroups: SkillGroup[] = [
       { name: "Fastify", where: "TokenGrid · WhatsApp CRM" },
       { name: "Node.js", where: "TokenGrid · BizForce" },
       { name: "Express", where: "BizForce" },
+      { name: "BullMQ", where: "WhatsApp CRM" },
+      { name: "Socket.IO", where: "WhatsApp CRM" },
     ],
   },
   {
@@ -58,7 +60,8 @@ export const skillGroups: SkillGroup[] = [
     title: "Database",
     skills: [
       { name: "PostgreSQL", where: "PlantDesk · TokenGrid · WhatsApp CRM · RescueGrid" },
-      { name: "SQLite", where: "Nifty 100 · Mutual Fund Analytics" },
+      { name: "Supabase", where: "WhatsApp CRM · RescueGrid" },
+      { name: "SQLite", where: "Nifty 100" },
       { name: "MongoDB", where: "BizForce" },
     ],
   },
@@ -76,14 +79,13 @@ export const skillGroups: SkillGroup[] = [
   },
   {
     id: "engineering",
-    title: "Engineering",
+    title: "Engineering domains",
     skills: [
-      { name: "Simulink", where: "Radar" },
-      { name: "Radar", where: "Radar · VectraVision internship" },
-      { name: "Signal processing", where: "STFT · micro-Doppler" },
-      { name: "Micro-Doppler", where: "Radar · VectraVision internship" },
+      { name: "Signal processing", where: "STFT · SVD features (VectraVision internship)" },
+      { name: "Micro-Doppler classification", where: "VectraVision internship" },
       { name: "Energy systems", where: "Local Energy Market" },
       { name: "Predictive maintenance", where: "PdM · PlantDesk" },
+      { name: "Reliability analytics", where: "PlantDesk (MTBF / MTTR)" },
     ],
   },
 ];

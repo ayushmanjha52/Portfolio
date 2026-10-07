@@ -26,8 +26,8 @@ export default function GitHubPage() {
         }
         intro={
           <>
-            {repos.length} public repositories, checked in October 2026 and grouped by what they demonstrate. Empty
-            repositories are left out; repositories that hold the same project link to one case study.
+            {repos.length} public repositories, checked in October 2026 and grouped by what they demonstrate.
+            Repositories that hold the same project link to one case study.
           </>
         }
       />

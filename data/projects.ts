@@ -17,7 +17,7 @@ export type Category =
   | "engineering"
   | "experimental";
 
-export type Domain = "energy" | "industry" | "radar" | "data" | "ai" | "software";
+export type Domain = "energy" | "industry" | "ml" | "data" | "ai" | "software";
 
 export type Metric = { value: string; label: string };
 export type Step = { label: string; detail?: string };
@@ -590,12 +590,12 @@ export const projects: Project[] = [
     ],
   },
 
-  // ─────────────────────────────────────────────────────────────── 4 · Doppelgänger
+  // ─────────────────────────────────────────────────────────────── 6 · Doppelgänger
   {
     slug: "doppelganger-entity-resolution",
     title: "Doppelgänger",
     subtitle: "Business Entity Resolution",
-    rank: 4,
+    rank: 6,
     tier: "medium",
     maturity: null,
     categories: ["featured", "ai-ml", "data"],
@@ -723,12 +723,12 @@ export const projects: Project[] = [
     ],
   },
 
-  // ──────────────────────────────────────────── 5 · Field-Device Predictive Maintenance
+  // ──────────────────────────────────────────── 7 · Field-Device Predictive Maintenance
   {
     slug: "field-device-predictive-maintenance",
     title: "Field-Device Predictive Maintenance",
     subtitle: "Combi Mill cause classifier → Combi Mill + Power Fleet",
-    rank: 5,
+    rank: 7,
     tier: "medium",
     maturity: null,
     categories: ["featured", "industrial", "ai-ml", "engineering"],
@@ -888,12 +888,12 @@ export const projects: Project[] = [
     ],
   },
 
-  // ──────────────────────────────────────────────────────────── 6 · Nifty 100
+  // ──────────────────────────────────────────────────────────── 8 · Nifty 100
   {
     slug: "nifty100-financial-intelligence",
     title: "Nifty 100 Financial Intelligence Platform",
     subtitle: "ETL, analytics, screening and peer intelligence for India's Nifty 100",
-    rank: 6,
+    rank: 8,
     tier: "medium",
     maturity: null,
     categories: ["featured", "data", "ai-ml"],
@@ -999,150 +999,26 @@ export const projects: Project[] = [
     ],
   },
 
-  // ─────────────────────────────────────────────────────────────── 7 · Radar
-  {
-    slug: "radar-micro-motion",
-    title: "RF Target Classification & Micro-Motion Radar",
-    subtitle: "Monostatic, bistatic and multistatic radar models in MATLAB / Simulink",
-    rank: 7,
-    tier: "medium",
-    maturity: "prototype",
-    maturityNote: "The repository calls itself a basic prototype and a stepping stone.",
-    categories: ["featured", "engineering", "ai-ml"],
-    domains: ["radar", "ai"],
-    period: "2025",
-    summary:
-      "Radar geometries modelled in Simulink, with time-frequency analysis and micro-Doppler signatures as the bridge from RF signal to target classification.",
-    recruiterLine:
-      "Signal-processing prototype in MATLAB / Simulink: monostatic, bistatic and scripted multistatic radar models, micro-Doppler and time-frequency analysis feeding an ML classifier.",
-    metrics: [
-      { value: "3", label: "radar geometries modelled" },
-      { value: "2", label: "receivers in the scripted multistatic model" },
-      { value: "RTI / DTI", label: "range- and Doppler-time outputs" },
-    ],
-    problem:
-      "Detect and characterise subtle motion — gestures, breathing, vibration, rotating parts — without contact, in conditions where optical sensors struggle.",
-    whyItMatters:
-      "Micro-motions modulate the radar return around the main Doppler shift. Those micro-Doppler signatures can tell apart targets whose bulk motion looks the same, which is the basis for non-contact monitoring and target classification.",
-    system: [
-      "Monostatic radar Simulink models, including a multiple-target configuration.",
-      "A bistatic radar Simulink model with range-time (RTI) and Doppler-time (DTI) intensity outputs.",
-      "A MATLAB script that builds a multistatic Simulink model in code: one transmitter, two targets, two free-space channels and two receivers feeding a range-Doppler response.",
-      "Sensor-array and beamformer configurations (ULA, microphone array).",
-      "The Simulink models and the multi-class classification notebook are linked from the README (OneDrive and Colab).",
-    ],
-    architecture: {
-      title: "Signal chain",
-      steps: [
-        { label: "RF signal", detail: "Transmitted waveform" },
-        { label: "Radar", detail: "Monostatic · bistatic · multistatic geometry" },
-        { label: "Doppler", detail: "Velocity from frequency shift; range-Doppler response" },
-        { label: "Time-frequency", detail: "Short-time Fourier transform (spectrogram)" },
-        { label: "Micro-Doppler", detail: "Sidebands from moving parts and micro-motion" },
-        { label: "Features", detail: "Signature descriptors for a classifier" },
-        { label: "Classification", detail: "ML / DL model (linked Colab notebook)" },
-      ],
-    },
-    dataFlow: {
-      title: "Scripted multistatic model",
-      steps: [
-        { label: "Tx waveform", detail: "Sine-wave placeholder source" },
-        { label: "Targets 1 & 2", detail: "phased/Target blocks" },
-        { label: "Free space", detail: "Two propagation channels" },
-        { label: "Receivers 1 & 2", detail: "phased/Radar Receiver" },
-        { label: "Range-Doppler", detail: "Joint response from both receivers" },
-      ],
-    },
-    decisions: [
-      {
-        title: "Model more than one geometry",
-        detail:
-          "Monostatic is the simplest (co-located transmitter and receiver); bistatic separates them; multistatic adds receivers so the target is seen from several aspect angles.",
-      },
-      {
-        title: "Build the multistatic model in code",
-        detail:
-          "multistatic_radar_model.m places and wires blocks with add_block / add_line, so the geometry is reproducible from a script rather than hand-drawn.",
-      },
-      {
-        title: "Time-frequency, not a single FFT",
-        detail:
-          "Micro-motion is non-stationary. A spectrogram shows how Doppler changes over time, where one FFT over the whole window would smear it.",
-      },
-    ],
-    results: [
-      "Range-time and Doppler-time intensity scope recordings from the bistatic simulation (shown below).",
-      "No classification accuracy is claimed for this repository.",
-    ],
-    limitations: [
-      "A basic prototype with a sample dataset, by the repository's own description — not a production radar.",
-      "Simulated returns only; there is no radar hardware in this repository.",
-      "Several Simulink models start from MathWorks Phased Array System Toolbox examples; the multistatic model script is custom.",
-      "The classifier lives in an externally linked Colab notebook, not in the repository.",
-    ],
-    stack: ["MATLAB", "Simulink", "Phased Array System Toolbox", "Signal processing", "Micro-Doppler"],
-    repos: [{ name: "radar-system", url: gh("radar-system") }],
-    media: [
-      {
-        src: "/projects/radar/bistatic-rti.gif",
-        alt: "Animated range-time intensity scope from the bistatic Simulink model, plotting range in metres against time history as the simulation runs.",
-        caption: "Bistatic range-time intensity (Simulink scope).",
-        width: 496,
-        height: 380,
-      },
-      {
-        src: "/projects/radar/bistatic-dti.gif",
-        alt: "Animated Doppler-time intensity scope from the bistatic Simulink model, plotting speed in metres per second against time history.",
-        caption: "Bistatic Doppler-time intensity (Simulink scope).",
-        width: 496,
-        height: 380,
-      },
-    ],
-    interview: [
-      {
-        q: "What is micro-Doppler?",
-        a: "Extra frequency modulation around a target's main Doppler shift, caused by parts moving relative to the body — swinging limbs, rotor blades, a breathing chest. It appears as time-varying sidebands, which is why it works as a fingerprint for target type.",
-      },
-      {
-        q: "Why the STFT?",
-        a: "Micro-Doppler is non-stationary: the frequency content changes within fractions of a second. An FFT over the whole window averages that away; the STFT takes spectra over short sliding windows and gives a time-frequency map. The window length trades time resolution against frequency resolution.",
-      },
-      {
-        q: "Monostatic versus bistatic?",
-        a: "Monostatic: transmitter and receiver at the same site, range from round-trip delay. Bistatic: separated transmitter and receiver, so constant range is an ellipse and the measured Doppler depends on the bistatic angle. A bistatic receiver can be passive.",
-      },
-      {
-        q: "Why multistatic?",
-        a: "Several receivers see the target from different aspect angles, so a signature that is weak from one viewpoint can be strong from another, and one blocked path does not blind the system. The cost is synchronisation and data fusion.",
-      },
-      {
-        q: "How does target classification work?",
-        a: "Spectrogram → features (or the spectrogram image itself) → classifier. In this repository the classifier is the linked Colab notebook. I later built a micro-Doppler CNN with STFT, centroid and SVD features during my internship at VectraVision.",
-        evidence: "README · Experience",
-      },
-    ],
-  },
-
-  // ─────────────────────────────────────────────────────────────── 8 · WhatsApp CRM
+  // ─────────────────────────────────────────────────────────────── 4 · WhatsApp CRM
   {
     slug: "whatsapp-crm",
     title: "WhatsApp CRM",
     subtitle: "Multi-tenant messaging CRM on the WhatsApp Cloud API",
-    rank: 8,
-    tier: "small",
+    rank: 4,
+    tier: "large",
     maturity: null,
-    categories: ["software"],
-    domains: ["software"],
+    categories: ["featured", "software", "ai-ml"],
+    domains: ["software", "ai"],
     period: "2026",
     summary:
-      "A shared real-time inbox, Kanban pipeline and template broadcasts, built as a Fastify gateway plus queue-driven workers.",
+      "A WhatsApp-native CRM for small businesses: a shared real-time inbox, a Kanban sales pipeline and template broadcasts with delivery analytics — built as a Fastify gateway plus queue-driven workers.",
     recruiterLine:
-      "Gateway + six services over BullMQ queues: real-time inbox via Socket.IO, broadcasts with delivery funnels, Stripe billing, and row-level-security tenant isolation on Supabase Postgres.",
-    callout: "Implementation lives in the WhatsAPP_crm-main directory of the repository.",
+      "Six TypeScript services — a Fastify API gateway, webhook receiver, inbox service and three BullMQ workers — with a Socket.IO real-time inbox, broadcast funnels, Stripe billing and row-level-security tenant isolation.",
     metrics: [
       { value: "6", label: "backend services" },
-      { value: "4", label: "message queues" },
+      { value: "4", label: "BullMQ message queues" },
       { value: "20", label: "SQL migrations" },
+      { value: "11", label: "test files" },
     ],
     problem:
       "Small businesses sell over WhatsApp from one phone. Teams need a shared inbox, a pipeline and broadcasts — while respecting WhatsApp's 24-hour window, template approval and opt-outs, and surviving Meta's webhook retries.",
@@ -1220,7 +1096,7 @@ export const projects: Project[] = [
       "Tailwind 4",
       "TanStack Query",
     ],
-    repos: [{ name: "Whatsapp-CRM", url: gh("Whatsapp-CRM") }],
+    repos: [{ name: "Whatsapp-CRM", url: gh("Whatsapp-CRM"), note: "code in WhatsAPP_crm-main/" }],
     interview: [
       {
         q: "Why put a queue behind the webhook?",
@@ -1237,29 +1113,39 @@ export const projects: Project[] = [
         a: "Campaign expansion — tag lists, per-contact variables, scheduling, completion tracking — is a different job from sending. Both one-to-one sends and campaigns end in the same outbound-messages queue, so rate limiting and the transient-only retry policy for the Graph API live in exactly one place.",
         evidence: "README › Architecture",
       },
+      {
+        q: "How does WhatsApp's 24-hour window shape the product?",
+        a: "Free-form replies are only allowed within 24 hours of the customer's last message. The composer enforces that window and offers an approved template once it has closed; templates are synced from Meta and their approval or rejection arrives by webhook.",
+        evidence: "README › Features",
+      },
+      {
+        q: "Where does AI fit, and why doesn't it send messages itself?",
+        a: "One click drafts three replies from the conversation, the contact's notes and pipeline stage. The agent picks one, edits it and sends it — the human stays accountable for what reaches the customer.",
+        evidence: "README › AI reply suggestions",
+      },
     ],
   },
 
-  // ─────────────────────────────────────────────────────────────── 9 · RescueGrid
+  // ─────────────────────────────────────────────────────────────── 5 · RescueGrid
   {
     slug: "rescuegrid",
     title: "RescueGrid",
-    subtitle: "Disaster-response coordination for victims, volunteers and authorities",
-    rank: 9,
-    tier: "small",
+    subtitle: "AI-assisted disaster-response coordination platform",
+    rank: 5,
+    tier: "large",
     maturity: null,
-    categories: ["software", "ai-ml"],
+    categories: ["featured", "software", "ai-ml"],
     domains: ["software", "ai"],
     period: "2026",
     summary:
-      "Three front ends on one Supabase database — a victim PWA, a volunteer PWA and a disaster-management dashboard with an AI assistant over live data.",
+      "Three front ends on one Supabase database — a victim PWA, a volunteer PWA and a disaster-management dashboard with an AI agent that answers questions over live operational data.",
     recruiterLine:
-      "Next.js 16 + Supabase platform with per-user row-level security, a mission lifecycle, SMS fallback, and an OpenAI Agents SDK assistant using a read-only Supabase MCP tool.",
-    callout: "Implementation lives in the Rescue-Grid--main/rescuegrid directory of the repository.",
+      "Deployed Next.js 16 + Supabase platform with per-user row-level security, a mission lifecycle, SMS fallback, and an OpenAI Agents SDK assistant using a read-only Supabase MCP tool.",
     metrics: [
-      { value: "3", label: "front ends, one database" },
+      { value: "3", label: "front ends on one database" },
       { value: "63", label: "API route files" },
-      { value: "5", label: "mission states" },
+      { value: "5", label: "mission states, tracked live" },
+      { value: "3", label: "access tiers under row-level security" },
     ],
     problem:
       "In a disaster, victims cannot reach responders, volunteers duplicate effort, and the operations centre has no live picture — often over failing networks.",
@@ -1332,7 +1218,7 @@ export const projects: Project[] = [
       "Twilio",
       "Web Push",
     ],
-    repos: [{ name: "Rescue-Grid", url: gh("Rescue-Grid") }],
+    repos: [{ name: "Rescue-Grid", url: gh("Rescue-Grid"), note: "code in Rescue-Grid--main/rescuegrid/" }],
     live: { url: "https://rescuegrid-india.vercel.app", note: "Victim PWA; volunteer and DMA logins at /volunteer/login and /dma/login" },
     interview: [
       {
@@ -1350,15 +1236,25 @@ export const projects: Project[] = [
         a: "The form detects it and offers SMS. With Twilio configured, an edge function receives the message after checking the Twilio signature; otherwise SOS goes to 112.",
         evidence: "components/victim/ReportForm.tsx · supabase/functions",
       },
+      {
+        q: "How do volunteers sign in without paying for SMS?",
+        a: "They register a phone number and choose a PIN; the server creates their Supabase login, so no OTP is sent. Sign-up, sign-in and PIN changes are rate-limited by connection and by phone number to stop PIN guessing, and operators can reset a forgotten PIN.",
+        evidence: "README › Emergency volunteers · migration 018",
+      },
+      {
+        q: "Why can't someone become an operator just by signing up?",
+        a: "Operator access needs the server-granted app_metadata.role = dma_operator, which only the secret key can set. The app (lib/auth) and the database (is_dma_operator(), migration 019) apply the same rule, and public email sign-ups stay disabled.",
+        evidence: "README › Security notes",
+      },
     ],
   },
 
-  // ─────────────────────────────────────────────────────────────── 10 · CodeBreaker
+  // ─────────────────────────────────────────────────────────────── 9 · CodeBreaker
   {
     slug: "codebreaker-symbols-api",
     title: "CodeBreaker Symbols API",
     subtitle: "FastAPI backend for editable symbols extracted from a PDF",
-    rank: 10,
+    rank: 9,
     tier: "small",
     maturity: null,
     categories: ["software"],
@@ -1423,12 +1319,12 @@ export const projects: Project[] = [
     ],
   },
 
-  // ─────────────────────────────────────────────────────────────── 11 · BizForce
+  // ─────────────────────────────────────────────────────────────── 10 · BizForce
   {
     slug: "bizforce-crm",
     title: "BizForce CRM — BDA Module",
     subtitle: "MERN CRM for business-development associates",
-    rank: 11,
+    rank: 10,
     tier: "small",
     maturity: null,
     categories: ["software"],
@@ -1490,97 +1386,12 @@ export const projects: Project[] = [
     ],
   },
 
-  // ───────────────────────────────────────────────────────── 12 · Mutual Fund Analytics
-  {
-    slug: "mutual-fund-analytics",
-    title: "Mutual Fund Analytics & Investor Intelligence",
-    subtitle: "Bluestock MF capstone — one project, two repository snapshots",
-    rank: 12,
-    tier: "small",
-    maturity: null,
-    categories: ["data"],
-    domains: ["data"],
-    period: "2026",
-    summary:
-      "A mutual-fund analytics pipeline: cleaning, a SQLite store, EDA, performance and risk analytics, and a four-page Power BI dashboard.",
-    recruiterLine: "Python + SQL + Power BI analytics on mutual-fund data: Sharpe / Sortino, drawdown, VaR / CVaR, sector concentration and investor cohorts.",
-    callout: "bluestock-mf and Mutual-Fund-Analysis are two snapshots of the same capstone (identical README and Power BI file), shown here once.",
-    metrics: [
-      { value: "10", label: "raw datasets" },
-      { value: "4", label: "Power BI dashboard pages" },
-      { value: "95 %", label: "VaR / CVaR level" },
-    ],
-    problem: "Fund NAVs, flows, holdings and investor transactions sit in separate files. Investors and analysts need performance, risk and behaviour in one view.",
-    whyItMatters: "Returns without risk are misleading. Risk-adjusted metrics, drawdowns and concentration show what a fund's headline return cost.",
-    system: [
-      "Master pipeline (run_pipeline.py) with data ingestion and a live NAV fetch script.",
-      "Cleaning to processed CSVs and a SQLite database.",
-      "EDA: NAV trends, AUM by fund house, SIP inflows, category heatmaps, investor demographics and geography, sector allocation.",
-      "Performance: alpha / beta, Sharpe / Sortino, maximum drawdown, benchmark comparison and a fund scorecard.",
-      "Advanced risk: VaR / CVaR at 95 %, rolling Sharpe, sector HHI concentration, SIP continuity and investor cohorts.",
-      "Power BI dashboard: Industry Overview, Fund Performance, Investor Analytics, SIP & Market Trends.",
-    ],
-    architecture: {
-      title: "Pipeline",
-      steps: [
-        { label: "Raw data", detail: "10 CSV datasets + live NAV" },
-        { label: "Cleaning", detail: "Processed CSVs" },
-        { label: "SQLite", detail: "bluestock_mf.db" },
-        { label: "EDA", detail: "Trends, flows, demographics" },
-        { label: "Performance", detail: "Alpha / beta · Sharpe / Sortino · drawdown" },
-        { label: "Risk", detail: "VaR / CVaR · rolling Sharpe · HHI" },
-        { label: "Power BI", detail: "4-page dashboard" },
-      ],
-    },
-    dataFlow: {
-      title: "Outputs",
-      steps: [
-        { label: "Charts", detail: "EDA and performance figures" },
-        { label: "CSV reports", detail: "Scorecard, VaR / CVaR, HHI, cohorts" },
-        { label: "Dashboard", detail: ".pbix and PDF export" },
-      ],
-    },
-    decisions: [
-      { title: "Risk-adjusted, not raw, returns", detail: "Sharpe, Sortino and drawdown sit next to returns so funds are compared on what their returns cost." },
-      { title: "Concentration as a risk", detail: "Sector HHI shows how concentrated each portfolio is, which a return series alone hides." },
-    ],
-    results: ["Four-page Power BI dashboard (committed as .pbix and PDF) with EDA charts and CSV risk reports."],
-    limitations: [
-      "Analysis is descriptive, built on the capstone's provided datasets.",
-      "The repositories hold the pipeline scripts, outputs and dashboard; the notebooks referenced in the README are not included.",
-    ],
-    stack: ["Python", "pandas", "SQLite", "SQL", "Power BI"],
-    repos: [
-      { name: "Mutual-Fund-Analysis", url: gh("Mutual-Fund-Analysis"), note: "includes processed data" },
-      { name: "bluestock-mf", url: gh("bluestock-mf"), note: "includes analytics outputs" },
-    ],
-    media: [
-      {
-        src: "/projects/mf/fund-performance.png",
-        alt: "Power BI dashboard page titled Fund Performance, with charts comparing mutual-fund returns and risk metrics.",
-        caption: "Power BI · Fund Performance page.",
-        width: 1447,
-        height: 755,
-      },
-    ],
-    interview: [
-      {
-        q: "Sharpe versus Sortino — when does the difference matter?",
-        a: "Sharpe divides excess return by total volatility; Sortino uses only downside deviation. For funds with large upside swings Sharpe penalises good volatility, so Sortino separates them better.",
-      },
-      {
-        q: "What does sector HHI tell you?",
-        a: "The Herfindahl–Hirschman index of sector weights: the sum of squared shares. Higher means more concentrated, so two funds with similar returns can carry very different concentration risk.",
-      },
-    ],
-  },
-
-  // ─────────────────────────────────────────────────────────────── 13 · Disaster Info
+  // ─────────────────────────────────────────────────────────────── 11 · Disaster Info
   {
     slug: "disaster-info",
     title: "Disaster Info",
     subtitle: "Real-time disaster information aggregation — early prototype",
-    rank: 13,
+    rank: 11,
     tier: "small",
     maturity: "archived",
     maturityNote: "Initial code base from 2024; not developed further.",
@@ -1634,12 +1445,12 @@ export const projects: Project[] = [
     ],
   },
 
-  // ─────────────────────────────────────────────────────────────── 14 · StudyFlow
+  // ─────────────────────────────────────────────────────────────── 12 · StudyFlow
   {
     slug: "studyflow",
     title: "StudyFlow",
     subtitle: "Academic to-do app",
-    rank: 14,
+    rank: 12,
     tier: "listed",
     maturity: "experimental",
     maturityNote: "Small prototype.",
@@ -1678,11 +1489,11 @@ export const getProject = (slug: string) => projects.find((p) => p.slug === slug
 
 export const byTier = (tier: Tier) => projects.filter((p) => p.tier === tier).sort((a, b) => a.rank - b.rank);
 
-/** Ordering for the featured grid on the homepage. Medium pairs follow the brief. */
+/** Ordering for the featured grid on the homepage. */
 export const featuredLayout = {
-  large: ["plantdesk", "local-energy-market", "tokengrid"],
-  medium: ["doppelganger-entity-resolution", "field-device-predictive-maintenance", "radar-micro-motion", "nifty100-financial-intelligence"],
-  small: ["whatsapp-crm", "rescuegrid", "codebreaker-symbols-api", "bizforce-crm", "mutual-fund-analytics", "disaster-info"],
+  large: ["plantdesk", "local-energy-market", "tokengrid", "whatsapp-crm", "rescuegrid"],
+  medium: ["doppelganger-entity-resolution", "field-device-predictive-maintenance", "nifty100-financial-intelligence"],
+  small: ["codebreaker-symbols-api", "bizforce-crm", "disaster-info"],
 } as const;
 
 export const categoryLabels: Record<Category, string> = {

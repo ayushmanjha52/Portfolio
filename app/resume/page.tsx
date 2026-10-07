@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowUpRight, Download, FileText, Mail } from "lucide-react";
+import { ArrowUpRight, Download, FileText, Mail, Phone } from "lucide-react";
 import { GitHubIcon, LinkedInIcon } from "@/components/site/BrandIcons";
+import { Portrait } from "@/components/site/Portrait";
 import { Chip } from "@/components/ui/Badges";
 import { achievements, education, profile, resumeSkills } from "@/data/profile";
 import { experience } from "@/data/experience";
@@ -25,14 +26,21 @@ export default function ResumePage() {
   return (
     <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
       <div className="flex flex-col gap-8 border-b border-line pb-10 md:flex-row md:items-end md:justify-between">
-        <div>
+        <div className="flex flex-col gap-6 sm:flex-row sm:items-center">
+          <Portrait size={112} preload />
+          <div>
           <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-faint">Resume</p>
-          <h1 className="mt-4 text-4xl font-semibold uppercase tracking-tight text-paper sm:text-5xl">{profile.name}</h1>
+          <h1 className="mt-3 text-4xl font-semibold uppercase tracking-tight text-paper sm:text-5xl">{profile.name}</h1>
           <p className="mt-2 font-mono text-[13px] uppercase tracking-[0.14em] text-mute">B.Tech, Electrical Engineering</p>
           <ul className="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-[14px] text-mute">
             <li>
               <a href={`mailto:${profile.email}`} className="inline-flex items-center gap-1.5 hover:text-paper">
                 <Mail aria-hidden="true" className="size-4" /> {profile.email}
+              </a>
+            </li>
+            <li>
+              <a href={profile.phoneHref} className="inline-flex items-center gap-1.5 hover:text-paper">
+                <Phone aria-hidden="true" className="size-4" /> {profile.phone}
               </a>
             </li>
             <li>
@@ -46,6 +54,7 @@ export default function ResumePage() {
               </a>
             </li>
           </ul>
+          </div>
         </div>
         <div className="flex flex-wrap gap-3">
           <a

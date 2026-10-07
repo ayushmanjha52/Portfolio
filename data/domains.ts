@@ -31,32 +31,32 @@ export const mapNodes: MapNode[] = [
     angle: -30,
   },
   {
-    id: "radar",
-    label: "Radar",
-    title: "Signal & sensing",
-    blurb: "RF returns, time-frequency analysis and micro-Doppler signatures.",
-    projects: [{ slug: "radar-micro-motion", name: "Micro-motion radar" }],
+    id: "ml",
+    label: "ML",
+    title: "Machine learning",
+    blurb: "Models judged on data they have never seen: entity resolution over 22M records, failure-cause classification.",
+    projects: [
+      { slug: "doppelganger-entity-resolution", name: "Doppelgänger entity resolution" },
+      { slug: "field-device-predictive-maintenance", name: "Field-device predictive maintenance" },
+    ],
     angle: 30,
   },
   {
     id: "data",
     label: "Data",
-    title: "Data & financial systems",
-    blurb: "ETL, data quality, analytics, screening and dashboards.",
-    projects: [
-      { slug: "nifty100-financial-intelligence", name: "Nifty 100 Financial Intelligence" },
-      { slug: "mutual-fund-analytics", name: "Mutual Fund Analytics" },
-    ],
+    title: "Data systems",
+    blurb: "ETL, data quality, analytics, screening and APIs over financial data.",
+    projects: [{ slug: "nifty100-financial-intelligence", name: "Nifty 100 Financial Intelligence" }],
     angle: 90,
   },
   {
     id: "ai",
     label: "AI",
-    title: "AI infrastructure & ML",
-    blurb: "LLM metering infrastructure, and entity resolution over 22M records.",
+    title: "AI infrastructure & agents",
+    blurb: "LLM metering infrastructure, and an AI agent answering questions over live operational data.",
     projects: [
       { slug: "tokengrid", name: "TokenGrid" },
-      { slug: "doppelganger-entity-resolution", name: "Doppelgänger entity resolution" },
+      { slug: "rescuegrid", name: "RescueGrid AI assistant" },
     ],
     angle: 150,
   },
@@ -64,7 +64,7 @@ export const mapNodes: MapNode[] = [
     id: "software",
     label: "Software",
     title: "Software systems",
-    blurb: "Queues, realtime, multi-tenant backends and product software.",
+    blurb: "Real-time product platforms: queues, websockets, multi-tenant backends.",
     projects: [
       { slug: "whatsapp-crm", name: "WhatsApp CRM" },
       { slug: "rescuegrid", name: "RescueGrid" },
@@ -75,7 +75,7 @@ export const mapNodes: MapNode[] = [
   },
 ];
 
-// "What I build": the six domains as the brief lays them out.
+// "What I build": six domains.
 export const buildDomains = [
   {
     n: "01",
@@ -96,10 +96,13 @@ export const buildDomains = [
   },
   {
     n: "03",
-    title: "Signal & sensing",
-    icon: "radar",
-    line: "From RF returns to time-frequency maps to micro-Doppler signatures.",
-    projects: [{ slug: "radar-micro-motion", name: "Radar" }],
+    title: "Real-time platforms",
+    icon: "workflow",
+    line: "Queue-driven backends and live interfaces for teams that coordinate in real time.",
+    projects: [
+      { slug: "whatsapp-crm", name: "WhatsApp CRM" },
+      { slug: "rescuegrid", name: "RescueGrid" },
+    ],
   },
   {
     n: "04",
@@ -117,12 +120,9 @@ export const buildDomains = [
   },
   {
     n: "06",
-    title: "Data & financial systems",
+    title: "Data systems",
     icon: "database",
-    line: "Validated pipelines feeding screens, peer analysis and dashboards.",
-    projects: [
-      { slug: "nifty100-financial-intelligence", name: "Nifty 100" },
-      { slug: "mutual-fund-analytics", name: "Mutual Fund Analytics" },
-    ],
+    line: "Validated pipelines feeding screens, peer analysis, APIs and reports.",
+    projects: [{ slug: "nifty100-financial-intelligence", name: "Nifty 100" }],
   },
 ] as const;

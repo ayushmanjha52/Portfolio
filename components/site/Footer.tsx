@@ -28,6 +28,7 @@ export function Footer() {
             <li><a className="hover:text-paper" href={profile.github} target="_blank" rel="noreferrer">GitHub</a></li>
             <li><a className="hover:text-paper" href={profile.linkedin} target="_blank" rel="noreferrer">LinkedIn</a></li>
             <li><a className="hover:text-paper" href={`mailto:${profile.email}`}>{profile.email}</a></li>
+            <li><a className="hover:text-paper" href={profile.phoneHref}>{profile.phone}</a></li>
           </ul>
         </nav>
       </div>

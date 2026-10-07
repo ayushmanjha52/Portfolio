@@ -93,11 +93,11 @@ export function LargeProjectCard({ project }: { project: Project }) {
   );
 }
 
-export function MediumProjectCard({ project }: { project: Project }) {
+export function MediumProjectCard({ project, className = "" }: { project: Project; className?: string }) {
   return (
     <article
       aria-labelledby={`card-${project.slug}`}
-      className="reveal flex flex-col rounded-md border border-line bg-ink-2/70 p-6 transition-colors hover:border-line-strong sm:p-7"
+      className={`reveal flex flex-col rounded-md border border-line bg-ink-2/70 p-6 transition-colors hover:border-line-strong sm:p-7 ${className}`}
     >
       <Meta project={project} />
       <h3 id={`card-${project.slug}`} className="mt-4 text-2xl font-semibold tracking-tight text-paper">

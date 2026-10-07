@@ -30,9 +30,14 @@ export function FeaturedWork() {
         ))}
       </div>
 
-      <div className="mt-6 grid gap-6 md:grid-cols-2">
-        {medium.map((p) => (
-          <MediumProjectCard key={p.slug} project={p} />
+      <div className="mt-6 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        {medium.map((p, i) => (
+          <MediumProjectCard
+            key={p.slug}
+            project={p}
+            // Odd count: the last card spans the two-column tablet row instead of leaving a gap.
+            className={medium.length % 2 === 1 && i === medium.length - 1 ? "md:col-span-2 lg:col-span-1" : ""}
+          />
         ))}
       </div>
 

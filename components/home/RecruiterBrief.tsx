@@ -1,10 +1,19 @@
 import Link from "next/link";
-import { ArrowUpRight, Download } from "lucide-react";
+import { ArrowUpRight, Download, Phone } from "lucide-react";
+import { Portrait } from "@/components/site/Portrait";
 import { achievements, education, profile } from "@/data/profile";
 import { experience } from "@/data/experience";
 import { getProject } from "@/data/projects";
 
-const top = ["plantdesk", "local-energy-market", "tokengrid", "doppelganger-entity-resolution", "field-device-predictive-maintenance"];
+const top = [
+  "plantdesk",
+  "local-energy-market",
+  "tokengrid",
+  "whatsapp-crm",
+  "rescuegrid",
+  "doppelganger-entity-resolution",
+  "field-device-predictive-maintenance",
+];
 
 /** The 30-second view. Rendered only in recruiter mode. */
 export function RecruiterBrief() {
@@ -23,12 +32,21 @@ export function RecruiterBrief() {
 
         <div className="mt-6 grid gap-px overflow-hidden rounded-md border border-line bg-line lg:grid-cols-3">
           <div className="bg-ink-2 p-6">
-            <p className="font-mono text-[10.5px] uppercase tracking-[0.2em] text-faint">Who</p>
-            <p className="mt-3 text-[15px] leading-relaxed text-paper">
+            <div className="flex items-center gap-4">
+              <Portrait size={72} />
+              <div>
+                <p className="font-mono text-[10.5px] uppercase tracking-[0.2em] text-faint">Who</p>
+                <p className="mt-1 text-[17px] font-medium text-paper">{profile.name}</p>
+                <a href={profile.phoneHref} className="text-[13px] text-mute hover:text-paper">
+                  {profile.phone}
+                </a>
+              </div>
+            </div>
+            <p className="mt-4 text-[15px] leading-relaxed text-paper">
               {degree.degree}, {degree.institution} ({degree.period}). {degree.detail}.
             </p>
             <p className="mt-3 text-[14px] leading-relaxed text-mute">
-              Builds intelligent software for real engineering and business problems: industrial maintenance, energy
+              Builds intelligent software for real engineering and business problems: real-time platforms, industrial maintenance, energy
               markets, AI infrastructure, ML and data.
             </p>
           </div>
@@ -86,6 +104,13 @@ export function RecruiterBrief() {
               >
                 Email
                 <ArrowUpRight aria-hidden="true" className="size-3.5" />
+              </a>
+              <a
+                href={profile.phoneHref}
+                className="inline-flex items-center gap-1.5 rounded-full border border-line-strong px-4 py-2 font-mono text-[11px] uppercase tracking-[0.14em] text-paper"
+              >
+                <Phone aria-hidden="true" className="size-3.5" />
+                Call
               </a>
             </div>
           </div>

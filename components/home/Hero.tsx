@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ArrowDown, Download } from "lucide-react";
 import { SystemMap } from "./SystemMap";
 import { GitHubIcon, LinkedInIcon } from "@/components/site/BrandIcons";
+import { Portrait } from "@/components/site/Portrait";
 import { profile } from "@/data/profile";
 
 export function Hero() {
@@ -10,20 +11,25 @@ export function Hero() {
       <div aria-hidden="true" className="bg-grid bg-grid-fade pointer-events-none absolute inset-0" />
       <div className="relative mx-auto grid max-w-7xl gap-12 px-4 pb-16 pt-14 sm:px-6 sm:pt-20 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:items-center lg:gap-10 lg:px-8 lg:pb-24">
         <div>
-          <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-faint">
-            B.Tech Electrical Engineering · BIT Sindri · 2023 – 2027
-          </p>
+          <div className="flex items-center gap-4">
+            <Portrait size={64} preload />
+            <div>
+              <h1 id="hero-title" className="font-mono text-sm uppercase tracking-[0.3em] text-signal">
+                {profile.name}
+              </h1>
+              <p className="mt-1.5 font-mono text-[11px] uppercase tracking-[0.2em] text-faint">
+                B.Tech Electrical Engineering · BIT Sindri · 2023 – 2027
+              </p>
+            </div>
+          </div>
 
-          <h1 id="hero-title" className="mt-6">
-            <span className="block font-mono text-sm uppercase tracking-[0.3em] text-signal">{profile.name}</span>
-            <span className="mt-4 block text-[clamp(2.75rem,8.2vw,5.6rem)] font-semibold uppercase leading-[0.92] tracking-[-0.035em] text-paper">
-              Engineering
-              <br />
-              Intelligent
-              <br />
-              Systems<span className="text-signal">.</span>
-            </span>
-          </h1>
+          <p className="mt-8 text-[clamp(2.75rem,8.2vw,5.6rem)] font-semibold uppercase leading-[0.92] tracking-[-0.035em] text-paper">
+            Engineering
+            <br />
+            Intelligent
+            <br />
+            Systems<span className="text-signal">.</span>
+          </p>
 
           <p className="mt-7 font-mono text-[13px] uppercase tracking-[0.14em] text-mute sm:text-sm">
             {profile.disciplines.map((d, i) => (
