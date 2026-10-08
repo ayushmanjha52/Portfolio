@@ -18,7 +18,7 @@ const selected = ["plantdesk", "local-energy-market", "tokengrid", "doppelganger
 
 function H({ children }: { children: React.ReactNode }) {
   return (
-    <h2 className="border-b border-line pb-2 font-mono text-[11.5px] uppercase tracking-[0.22em] text-signal">{children}</h2>
+    <h2 className="display border-b border-line pb-3 text-[2rem] leading-none text-paper">{children}</h2>
   );
 }
 
@@ -30,8 +30,8 @@ export default function ResumePage() {
           <Portrait size={112} preload />
           <div>
           <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-faint">Resume</p>
-          <h1 className="mt-3 text-4xl font-semibold uppercase tracking-tight text-paper sm:text-5xl">{profile.name}</h1>
-          <p className="mt-2 font-mono text-[13px] uppercase tracking-[0.14em] text-mute">B.Tech, Electrical Engineering</p>
+          <h1 className="display mt-3 text-[3.4rem] leading-none text-paper sm:text-7xl">{profile.name}</h1>
+          <p className="mt-2 text-[17px] text-mute">B.Tech, Electrical Engineering</p>
           <ul className="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-[14px] text-mute">
             <li>
               <a href={`mailto:${profile.email}`} className="inline-flex items-center gap-1.5 hover:text-paper">
@@ -60,7 +60,7 @@ export default function ResumePage() {
           <a
             href={profile.resumePdf}
             download
-            className="inline-flex items-center gap-2 rounded-full bg-signal px-5 py-2.5 font-mono text-[12px] font-medium uppercase tracking-[0.16em] text-ink"
+            className="inline-flex items-center gap-2 rounded-full bg-signal px-5 py-2.5 text-[15px] font-medium text-ink"
           >
             <Download aria-hidden="true" className="size-4" /> Download resume
           </a>
@@ -68,7 +68,7 @@ export default function ResumePage() {
             href={profile.resumePdf}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center gap-2 rounded-full border border-line-strong px-5 py-2.5 font-mono text-[12px] uppercase tracking-[0.16em] text-paper hover:border-paper"
+            className="inline-flex items-center gap-2 rounded-full border border-line-strong px-5 py-2.5 text-[15px] font-medium text-paper hover:border-paper"
           >
             <FileText aria-hidden="true" className="size-4" /> Open PDF
           </a>
@@ -111,7 +111,7 @@ export default function ResumePage() {
                       <span className="text-[16px] font-medium text-paper group-hover:text-signal">{p.title}</span>
                       <ArrowUpRight aria-hidden="true" className="size-3.5 text-faint" />
                     </Link>
-                    <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-signal">{p.subtitle}</p>
+                    <p className="text-[14.5px] text-signal">{p.subtitle}</p>
                     <p className="mt-1 text-[14.5px] leading-relaxed text-mute">{p.recruiterLine}</p>
                   </li>
                 );

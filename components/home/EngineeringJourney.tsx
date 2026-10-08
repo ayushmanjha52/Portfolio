@@ -42,7 +42,7 @@ export function EngineeringJourney() {
                 <span className="font-mono text-[11px] tracking-[0.2em] text-signal">{String(i + 1).padStart(2, "0")}</span>
                 <span className="font-mono text-[10.5px] uppercase tracking-[0.18em] text-faint">{stage.period}</span>
               </div>
-              <h3 className="mt-5 font-mono text-[14px] uppercase tracking-[0.14em] text-paper">
+              <h3 className="display mt-5 text-[1.85rem] leading-none text-paper">
                 {stage.title}
                 {i < journey.length - 1 && (
                   <span aria-hidden="true" className="ml-2 text-faint">
@@ -77,13 +77,13 @@ export function EngineeringJourney() {
           <div className="flex items-start gap-4">
             <MessagesSquare aria-hidden="true" className="mt-0.5 size-5 shrink-0 text-signal" strokeWidth={1.5} />
             <div>
-              <p className="font-mono text-[12px] uppercase tracking-[0.18em] text-signal">Interview mode</p>
+              <p className="display text-[1.6rem] leading-none text-signal">Interview mode</p>
               <p className="mt-1 text-[15px] text-paper">
                 Every question an interviewer can ask me about these projects — with the answer and the file that proves it.
               </p>
             </div>
           </div>
-          <span className="inline-flex items-center gap-2 font-mono text-[12px] uppercase tracking-[0.16em] text-paper">
+          <span className="inline-flex items-center gap-2 text-[15px] font-medium text-paper">
             Open
             <ArrowRight aria-hidden="true" className="size-4 transition-transform group-hover:translate-x-1" />
           </span>

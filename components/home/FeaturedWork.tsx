@@ -50,7 +50,7 @@ export function FeaturedWork() {
         </div>
       </div>
 
-      <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-3 font-mono text-[12px] uppercase tracking-[0.16em]">
+      <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-3 text-[15px] font-medium">
         <Link href="/projects" className="inline-flex items-center gap-2 text-paper hover:text-signal">
           All projects
           <ArrowRight aria-hidden="true" className="size-3.5" />

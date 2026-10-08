@@ -31,7 +31,7 @@ export function WhatIBuild() {
                 <span className="font-mono text-[11px] tracking-[0.2em] text-signal">{d.n}</span>
                 <Icon aria-hidden="true" className="size-5 text-faint transition-colors group-hover:text-signal" strokeWidth={1.5} />
               </div>
-              <h3 className="mt-6 font-mono text-[13px] uppercase tracking-[0.16em] text-paper">{d.title}</h3>
+              <h3 className="display mt-6 text-[1.85rem] leading-none text-paper">{d.title}</h3>
               <p className="mt-2 flex-1 text-[14px] leading-relaxed text-mute">{d.line}</p>
               <ul className="mt-5 flex flex-wrap gap-x-4 gap-y-1 border-t border-line pt-4">
                 {d.projects.map((p) => (

@@ -13,7 +13,7 @@ export function Skills() {
       <div className="grid gap-px overflow-hidden rounded-md border border-line bg-line md:grid-cols-2 xl:grid-cols-3">
         {skillGroups.map((g) => (
           <section key={g.id} aria-labelledby={`skills-${g.id}`} className="reveal bg-ink-2 p-6">
-            <h3 id={`skills-${g.id}`} className="font-mono text-[11.5px] uppercase tracking-[0.2em] text-signal">
+            <h3 id={`skills-${g.id}`} className="display text-[1.75rem] leading-none text-paper">
               {g.title}
             </h3>
             <dl className="mt-4 divide-y divide-line">

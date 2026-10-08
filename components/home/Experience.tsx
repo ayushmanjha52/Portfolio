@@ -15,7 +15,7 @@ export function Experience() {
               <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-signal">{e.period}</p>
               <p className="font-mono text-[10.5px] uppercase tracking-[0.18em] text-faint">{e.mode}</p>
             </div>
-            <h3 className="mt-4 text-xl font-semibold tracking-tight text-paper">{e.role}</h3>
+            <h3 className="display mt-4 text-[2.1rem] leading-none text-paper">{e.role}</h3>
             <p className="text-[15px] text-mute">{e.company}</p>
             <ul className="mt-5 space-y-2.5">
               {e.bullets.map((b) => (
@@ -35,7 +35,7 @@ export function Experience() {
             {e.related && (
               <Link
                 href={e.related.href}
-                className="mt-auto inline-flex items-center gap-1.5 pt-6 font-mono text-[11.5px] uppercase tracking-[0.14em] text-mute hover:text-paper"
+                className="mt-auto inline-flex items-center gap-1.5 pt-6 text-[14.5px] font-medium text-mute hover:text-paper"
               >
                 Related · {e.related.label}
                 <ArrowRight aria-hidden="true" className="size-3.5" />
@@ -49,7 +49,7 @@ export function Experience() {
         {education.map((ed) => (
           <div key={ed.institution} className="reveal bg-ink-2 p-6">
             <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-faint">{ed.period}</p>
-            <h3 className="mt-3 text-[17px] font-medium text-paper">{ed.degree}</h3>
+            <h3 className="display mt-3 text-[1.6rem] leading-tight text-paper">{ed.degree}</h3>
             <p className="text-[14px] text-mute">
               {ed.institution} · {ed.location}
             </p>

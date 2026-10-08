@@ -5,13 +5,14 @@ import { profile } from "@/data/profile";
 
 // Colour classes are kept separate so the primary button never carries two text colours.
 const buttonBase =
-  "inline-flex items-center gap-2 rounded-full border px-5 py-2.5 font-mono text-[12px] uppercase tracking-[0.16em] transition-colors";
+  "inline-flex items-center gap-2 rounded-full border px-5 py-2.5 text-[15px] font-medium transition-colors";
 const button = `${buttonBase} border-line-strong text-paper hover:border-paper`;
 const primaryButton = `${buttonBase} border-signal bg-signal font-medium text-ink`;
 
 export function Contact() {
   return (
     <section id="contact" aria-labelledby="contact-title" className="relative overflow-hidden border-t border-line">
+      <div aria-hidden="true" className="glow pointer-events-none absolute inset-0" />
       <div aria-hidden="true" className="bg-grid bg-grid-fade pointer-events-none absolute inset-0 opacity-70" />
       <div className="relative mx-auto max-w-7xl px-4 py-24 sm:px-6 sm:py-28 lg:px-8">
         <p className="flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.22em] text-faint">
@@ -24,17 +25,17 @@ export function Contact() {
           <div>
             <h2 id="contact-title">
               <span className="block font-mono text-sm uppercase tracking-[0.3em] text-signal">{profile.name}</span>
-              <span className="mt-4 block text-[clamp(2.2rem,6vw,4.2rem)] font-semibold uppercase leading-[0.95] tracking-[-0.03em] text-paper">
-                Engineering intelligent systems<span className="text-signal">.</span>
+              <span className="display mt-4 block text-[clamp(3rem,7.4vw,5.75rem)] leading-[0.92] text-paper">
+                Engineering <em className="text-signal">intelligent</em> systems.
               </span>
             </h2>
-            <p className="mt-5 font-mono text-[13px] uppercase tracking-[0.14em] text-mute">
+            <p className="mt-6 text-[17px] text-mute">
               {profile.disciplines.join("  ×  ")}
             </p>
 
-            <blockquote className="mt-10 max-w-3xl border-l-2 border-signal pl-5 text-xl leading-relaxed text-paper sm:text-2xl">
+            <blockquote className="display mt-10 max-w-3xl border-l-2 border-signal pl-6 text-[1.9rem] leading-snug text-paper sm:text-[2.3rem]">
               <p>{profile.closing[0]}</p>
-              <p className="mt-2 text-paper/80">{profile.closing[1]}</p>
+              <p className="mt-2 italic text-paper/75">{profile.closing[1]}</p>
             </blockquote>
           </div>
 

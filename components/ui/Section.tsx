@@ -44,11 +44,11 @@ export function SectionHeading({
           <span aria-hidden="true" className="h-px w-8 bg-line-strong" />
           {eyebrow}
         </p>
-        <Heading id={id} className="mt-4 text-3xl font-semibold tracking-tight text-paper sm:text-4xl lg:text-[2.75rem] lg:leading-[1.08]">
+        <Heading id={id} className="display mt-5 text-[2.6rem] leading-[1.02] text-paper sm:text-[3.2rem] lg:text-[3.75rem]">
           {title}
         </Heading>
       </div>
-      {intro && <p className="max-w-xl text-[15px] leading-relaxed text-mute lg:justify-self-end">{intro}</p>}
+      {intro && <p className="max-w-xl text-[16.5px] leading-relaxed text-mute lg:justify-self-end">{intro}</p>}
     </div>
   );
 }

@@ -35,7 +35,7 @@ export function SignalToDecision() {
               tabIndex={on ? 0 : -1}
               onClick={() => setActiveId(ex.id)}
               onKeyDown={(e) => onKeyDown(e, i)}
-              className={`rounded-full border px-3.5 py-1.5 font-mono text-[11px] uppercase tracking-[0.14em] transition-colors ${
+              className={`rounded-full border px-4 py-1.5 text-[14.5px] transition-colors ${
                 on ? "border-signal bg-signal-soft text-signal" : "border-line text-mute hover:border-line-strong hover:text-paper"
               }`}
             >

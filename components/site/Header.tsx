@@ -24,7 +24,7 @@ export function Header() {
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
         <Link
           href="/"
-          className="group flex items-center gap-2.5 whitespace-nowrap font-mono text-[13px] font-medium uppercase tracking-[0.2em] text-paper"
+          className="group flex items-center gap-2.5 whitespace-nowrap font-serif text-[23px] leading-none text-paper"
           onClick={() => setOpen(false)}
         >
           <span aria-hidden="true" className="relative grid size-5 place-items-center rounded-full border border-signal-line">
@@ -34,7 +34,7 @@ export function Header() {
         </Link>
 
         <nav aria-label="Primary" className="hidden xl:block">
-          <ul className="flex items-center gap-6 font-mono text-[11.5px] uppercase tracking-[0.14em] text-mute">
+          <ul className="flex items-center gap-7 text-[14.5px] text-mute">
             {navItems.map((item) => (
               <li key={item.href} className={item.engineerOnly ? "eng-only" : undefined}>
                 <Link href={item.href} className="transition-colors hover:text-paper">
@@ -83,7 +83,7 @@ export function Header() {
               className="border-t border-line bg-ink xl:hidden"
             >
               <nav aria-label="Mobile" className="mx-auto max-w-7xl px-4 py-4 sm:px-6">
-                <ul className="grid grid-cols-2 gap-x-6 font-mono text-[13px] uppercase tracking-[0.14em]">
+                <ul className="grid grid-cols-2 gap-x-6 text-[16px]">
                   {navItems.map((item) => (
                     <li key={item.href} className={item.engineerOnly ? "eng-only" : undefined}>
                       <Link

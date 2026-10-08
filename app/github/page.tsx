@@ -36,7 +36,7 @@ export default function GitHubPage() {
         href={profile.github}
         target="_blank"
         rel="noreferrer"
-        className="mt-8 inline-flex items-center gap-2 rounded-full border border-line-strong px-4 py-2 font-mono text-[12px] uppercase tracking-[0.14em] text-paper hover:border-paper"
+        className="mt-8 inline-flex items-center gap-2 rounded-full border border-line-strong px-4 py-2 text-[14.5px] font-medium text-paper hover:border-paper"
       >
         <GitHubIcon className="size-4" />
         github.com/{profile.githubHandle}
@@ -50,7 +50,7 @@ export default function GitHubPage() {
           return (
             <section key={g.id} aria-labelledby={`group-${g.id}`}>
               <div className="flex flex-wrap items-baseline justify-between gap-2 border-b border-line pb-3">
-                <h2 id={`group-${g.id}`} className="font-mono text-[12px] uppercase tracking-[0.22em] text-signal">
+                <h2 id={`group-${g.id}`} className="display text-[2.1rem] leading-none text-paper">
                   {g.id} <span className="text-faint">· {items.length}</span>
                 </h2>
                 <p className="text-[13px] text-faint">{g.blurb}</p>
@@ -72,7 +72,7 @@ export default function GitHubPage() {
                     <p className="text-[14px] leading-relaxed text-mute">
                       {r.description} <span className="font-mono text-[11px] text-faint">· {r.language}</span>
                     </p>
-                    <div className="flex items-center gap-4 font-mono text-[11px] uppercase tracking-[0.14em]">
+                    <div className="flex items-center gap-4 text-[14px] font-medium">
                       {r.project && (
                         <Link href={`/projects/${r.project}`} className="inline-flex items-center gap-1.5 text-paper hover:text-signal">
                           Case study <ArrowRight aria-hidden="true" className="size-3.5" />

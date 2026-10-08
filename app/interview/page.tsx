@@ -35,7 +35,7 @@ export default function InterviewPage() {
           <a
             key={p.slug}
             href={`#${p.slug}`}
-            className="rounded-full border border-line px-3 py-1.5 font-mono text-[11px] uppercase tracking-[0.12em] text-mute hover:border-line-strong hover:text-paper"
+            className="rounded-full border border-line px-3.5 py-1.5 text-[14px] text-mute hover:border-line-strong hover:text-paper"
           >
             {p.title} <span className="text-faint">{p.interview.length}</span>
           </a>
@@ -47,14 +47,14 @@ export default function InterviewPage() {
           <section key={p.slug} id={p.slug} aria-labelledby={`${p.slug}-iq`} className="anchor">
             <div className="flex flex-wrap items-baseline justify-between gap-3 border-b border-line pb-3">
               <div>
-                <h2 id={`${p.slug}-iq`} className="text-xl font-semibold tracking-tight text-paper">
+                <h2 id={`${p.slug}-iq`} className="display text-[2.1rem] leading-none text-paper">
                   {p.title}
                 </h2>
-                <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-signal">{p.subtitle}</p>
+                <p className="text-[14.5px] text-signal">{p.subtitle}</p>
               </div>
               <Link
                 href={`/projects/${p.slug}`}
-                className="inline-flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-[0.14em] text-mute hover:text-paper"
+                className="inline-flex items-center gap-1.5 text-[14px] font-medium text-mute hover:text-paper"
               >
                 Case study <ArrowRight aria-hidden="true" className="size-3.5" />
               </Link>

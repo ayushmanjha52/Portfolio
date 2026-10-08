@@ -15,7 +15,7 @@ export function ModeToggle({ className = "" }: { className?: string }) {
     <div
       role="group"
       aria-label="View mode"
-      className={`relative inline-flex items-center rounded-full border border-line-strong bg-ink-2 p-0.5 font-mono text-[10.5px] uppercase tracking-[0.14em] ${className}`}
+      className={`relative inline-flex items-center rounded-full border border-line-strong bg-ink-2 p-0.5 text-[13px] ${className}`}
     >
       {options.map((o) => {
         const active = mode === o.value;
@@ -26,7 +26,7 @@ export function ModeToggle({ className = "" }: { className?: string }) {
             title={o.hint}
             aria-pressed={active}
             onClick={() => setMode(o.value)}
-            className={`relative rounded-full px-3 py-1.5 font-mono uppercase tracking-[0.14em] transition-colors duration-200 ${
+            className={`relative rounded-full px-3.5 py-1.5 font-medium transition-colors duration-200 ${
               active ? "bg-paper text-ink" : "text-mute hover:text-paper"
             }`}
           >

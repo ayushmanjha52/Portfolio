@@ -5,7 +5,7 @@ import type { Project } from "@/data/projects";
 
 export function ProjectLinks({ project, caseStudy = true }: { project: Project; caseStudy?: boolean }) {
   return (
-    <div className="flex flex-wrap items-center gap-x-5 gap-y-2 font-mono text-[11.5px] uppercase tracking-[0.14em]">
+    <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-[14.5px] font-medium">
       {caseStudy && (
         <Link
           href={`/projects/${project.slug}`}

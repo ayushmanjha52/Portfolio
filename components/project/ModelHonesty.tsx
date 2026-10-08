@@ -19,7 +19,7 @@ export function ModelHonesty({ data }: { data: ModelHonestyData }) {
                     )}
                   </dt>
                   <dd
-                    className={`font-mono tabular-nums ${row.headline ? "text-3xl text-signal" : "text-xl text-faint"}`}
+                    className={`font-serif leading-none ${row.headline ? "text-[2.75rem] text-signal" : "text-[1.7rem] text-faint"}`}
                   >
                     {row.value}
                   </dd>

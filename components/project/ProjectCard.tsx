@@ -27,17 +27,19 @@ function HonestyStrip({ project }: { project: Project }) {
   return (
     <div className="mt-5 rounded-md border border-line bg-ink p-4">
       <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-faint">Model honesty · {col.heading}</p>
-      <div className="mt-2 flex flex-wrap items-end gap-x-6 gap-y-2">
+      <div className="mt-3 grid grid-cols-2 gap-4">
         {headline && (
           <p>
-            <span className="font-mono text-2xl text-signal tabular-nums">{headline.value}</span>
-            <span className="ml-2 text-[12px] text-mute">{headline.label} · headline</span>
+            <span className="block font-serif text-[2.2rem] leading-none text-signal">{headline.value}</span>
+            <span className="mt-1.5 block text-[12.5px] leading-snug text-mute">{headline.label}</span>
+            <span className="mt-0.5 block text-[12px] text-signal">Headline</span>
           </p>
         )}
         {other && (
           <p>
-            <span className="font-mono text-lg text-faint tabular-nums">{other.value}</span>
-            <span className="ml-2 text-[12px] text-faint">{other.label} · optimistic</span>
+            <span className="block font-serif text-[2.2rem] leading-none text-faint">{other.value}</span>
+            <span className="mt-1.5 block text-[12.5px] leading-snug text-faint">{other.label}</span>
+            <span className="mt-0.5 block text-[12px] text-faint">Optimistic</span>
           </p>
         )}
       </div>
@@ -63,12 +65,12 @@ export function LargeProjectCard({ project }: { project: Project }) {
     >
       <div className="flex min-w-0 flex-1 flex-col">
         <Meta project={project} />
-        <h3 id={`card-${project.slug}`} className="mt-5 text-3xl font-semibold tracking-tight text-paper sm:text-[2.4rem]">
+        <h3 id={`card-${project.slug}`} className="display mt-5 text-[2.7rem] leading-none text-paper sm:text-[3.4rem]">
           <Link href={`/projects/${project.slug}`} className="hover:text-signal">
             {project.title}
           </Link>
         </h3>
-        <p className="mt-2 font-mono text-[12px] uppercase tracking-[0.14em] text-signal">{project.subtitle}</p>
+        <p className="mt-2 text-[17px] text-signal">{project.subtitle}</p>
         <Summary project={project} className="mt-5 max-w-2xl text-[16px] leading-relaxed text-paper/90" />
         {project.callout && (
           <p className="mt-4 max-w-2xl border-l-2 border-signal-line pl-3 text-[13px] leading-relaxed text-mute">
@@ -100,12 +102,12 @@ export function MediumProjectCard({ project, className = "" }: { project: Projec
       className={`reveal flex flex-col rounded-md border border-line bg-ink-2/70 p-6 transition-colors hover:border-line-strong sm:p-7 ${className}`}
     >
       <Meta project={project} />
-      <h3 id={`card-${project.slug}`} className="mt-4 text-2xl font-semibold tracking-tight text-paper">
+      <h3 id={`card-${project.slug}`} className="display mt-4 text-[2.2rem] leading-none text-paper">
         <Link href={`/projects/${project.slug}`} className="hover:text-signal">
           {project.title}
         </Link>
       </h3>
-      <p className="mt-1.5 font-mono text-[11px] uppercase tracking-[0.14em] text-signal">{project.subtitle}</p>
+      <p className="mt-1.5 text-[15.5px] text-signal">{project.subtitle}</p>
       <Summary project={project} className="mt-4 text-[15px] leading-relaxed text-paper/90" />
 
       {project.honesty ? (
@@ -134,7 +136,7 @@ export function SmallProjectCard({ project }: { project: Project }) {
       className="reveal flex flex-col rounded-md border border-line bg-ink-2/50 p-5 transition-colors hover:border-line-strong"
     >
       <Meta project={project} />
-      <h3 id={`card-${project.slug}`} className="mt-3.5 text-lg font-semibold tracking-tight text-paper">
+      <h3 id={`card-${project.slug}`} className="display mt-3.5 text-[1.7rem] leading-none text-paper">
         <Link href={`/projects/${project.slug}`} className="hover:text-signal">
           {project.title}
         </Link>

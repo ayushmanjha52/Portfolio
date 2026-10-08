@@ -33,7 +33,7 @@ export function ProjectsExplorer({ projects }: { projects: ProjectListItem[] }) 
               type="button"
               aria-pressed={on}
               onClick={() => setFilter(c)}
-              className={`rounded-full border px-3.5 py-1.5 font-mono text-[11px] uppercase tracking-[0.14em] transition-colors ${
+              className={`rounded-full border px-4 py-1.5 text-[14px] transition-colors ${
                 on ? "border-signal bg-signal-soft text-signal" : "border-line text-mute hover:border-line-strong hover:text-paper"
               }`}
             >
@@ -53,7 +53,7 @@ export function ProjectsExplorer({ projects }: { projects: ProjectListItem[] }) 
             <span className="font-mono text-[12px] tracking-[0.18em] text-faint">{String(p.rank).padStart(2, "0")}</span>
             <div className="min-w-0">
               <div className="flex flex-wrap items-center gap-2">
-                <h2 className="text-lg font-semibold tracking-tight text-paper">
+                <h2 className="display text-[1.9rem] leading-none text-paper">
                   <Link href={`/projects/${p.slug}`} className="hover:text-signal">
                     {p.title}
                   </Link>
@@ -61,13 +61,13 @@ export function ProjectsExplorer({ projects }: { projects: ProjectListItem[] }) 
                 {p.live && <LiveBadge />}
                 <MaturityBadge maturity={p.maturity} />
               </div>
-              <p className="mt-0.5 font-mono text-[11px] uppercase tracking-[0.12em] text-signal">{p.subtitle}</p>
+              <p className="mt-0.5 text-[15px] text-signal">{p.subtitle}</p>
               <p className="mt-2 max-w-3xl text-[14.5px] leading-relaxed text-mute">{p.summary}</p>
               <div className="mt-3">
                 <StackList items={p.stack} limit={6} />
               </div>
             </div>
-            <div className="flex flex-wrap items-center gap-x-4 gap-y-2 font-mono text-[11px] uppercase tracking-[0.14em] md:flex-col md:items-end">
+            <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-[14px] font-medium md:flex-col md:items-end">
               <Link href={`/projects/${p.slug}`} className="inline-flex items-center gap-1.5 text-paper hover:text-signal">
                 Case study <ArrowRight aria-hidden="true" className="size-3.5" />
               </Link>

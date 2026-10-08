@@ -64,7 +64,7 @@ function Block({
 }) {
   return (
     <section id={id} aria-labelledby={`${id}-h`} className={`border-t border-line py-10 ${engineerOnly ? "eng-only" : ""}`}>
-      <h2 id={`${id}-h`} className="font-mono text-[11.5px] uppercase tracking-[0.22em] text-signal">
+      <h2 id={`${id}-h`} className="display text-[2.1rem] leading-none text-paper">
         {label}
       </h2>
       <div className="mt-5">{children}</div>
@@ -87,9 +87,10 @@ export default async function ProjectPage({ params }: PageProps<"/projects/[slug
     <article>
       {/* Header */}
       <header className="relative overflow-hidden border-b border-line">
+        <div aria-hidden="true" className="glow pointer-events-none absolute inset-0" />
         <div aria-hidden="true" className="bg-grid bg-grid-fade pointer-events-none absolute inset-0" />
         <div className="relative mx-auto max-w-7xl px-4 pb-12 pt-10 sm:px-6 lg:px-8 lg:pb-16">
-          <nav aria-label="Breadcrumb" className="font-mono text-[11px] uppercase tracking-[0.18em] text-faint">
+          <nav aria-label="Breadcrumb" className="text-[13px] text-faint">
             <ol className="flex flex-wrap items-center gap-2">
               <li>
                 <Link href="/#work" className="hover:text-paper">
@@ -117,8 +118,8 @@ export default async function ProjectPage({ params }: PageProps<"/projects/[slug
             <MaturityBadge maturity={p.maturity} />
           </div>
 
-          <h1 className="mt-5 max-w-4xl text-4xl font-semibold tracking-tight text-paper sm:text-5xl lg:text-6xl">{p.title}</h1>
-          <p className="mt-3 font-mono text-[12.5px] uppercase tracking-[0.14em] text-signal">{p.subtitle}</p>
+          <h1 className="display mt-5 max-w-4xl text-[3.5rem] leading-[0.95] text-paper sm:text-7xl lg:text-[5.75rem]">{p.title}</h1>
+          <p className="mt-3 text-[18px] text-signal">{p.subtitle}</p>
           <p className="mt-6 max-w-3xl text-lg leading-relaxed text-paper/90">{p.summary}</p>
           {p.maturityNote && <p className="mt-3 max-w-3xl text-[14px] text-mute">{p.maturityNote}</p>}
           {p.callout && (
@@ -138,11 +139,11 @@ export default async function ProjectPage({ params }: PageProps<"/projects/[slug
                 href={r.url}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2 rounded-full border border-line-strong px-4 py-2 font-mono text-[11.5px] uppercase tracking-[0.12em] text-paper transition-colors hover:border-paper"
+                className="inline-flex items-center gap-2 rounded-full border border-line-strong px-4 py-2 text-[14px] font-medium text-paper transition-colors hover:border-paper"
               >
                 <GitHubIcon className="size-4" />
                 {r.name}
-                {r.note && <span className="normal-case tracking-normal text-faint">· {r.note}</span>}
+                {r.note && <span className="font-normal text-faint">· {r.note}</span>}
               </a>
             ))}
             {p.live && (
@@ -150,7 +151,7 @@ export default async function ProjectPage({ params }: PageProps<"/projects/[slug
                 href={p.live.url}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2 rounded-full bg-signal px-4 py-2 font-mono text-[11.5px] uppercase tracking-[0.12em] text-ink"
+                className="inline-flex items-center gap-2 rounded-full bg-signal px-4 py-2 text-[14px] font-medium text-ink"
               >
                 Live demo
                 <ArrowUpRight aria-hidden="true" className="size-4" />

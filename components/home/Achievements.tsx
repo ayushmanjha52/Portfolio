@@ -14,7 +14,7 @@ export function Achievements() {
                 <Icon aria-hidden="true" className="size-4 text-signal" strokeWidth={1.75} />
                 <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-signal">{a.kind}</span>
               </div>
-              <h3 className="mt-4 text-[17px] font-medium leading-snug text-paper">{a.title}</h3>
+              <h3 className="display mt-4 text-[1.6rem] leading-tight text-paper">{a.title}</h3>
               {a.detail && <p className="mt-2 text-[14px] leading-relaxed text-mute">{a.detail}</p>}
             </li>
           );

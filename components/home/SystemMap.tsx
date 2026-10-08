@@ -180,7 +180,7 @@ export function SystemMap() {
                 <p className="font-mono text-[10.5px] uppercase tracking-[0.2em] text-signal">
                   Trace · {shown.label}
                 </p>
-                <p className="mt-1.5 text-[15px] font-medium text-paper">{shown.title}</p>
+                <p className="mt-2 font-serif text-[1.6rem] leading-none text-paper">{shown.title}</p>
                 <p className="mt-1 text-[13px] leading-snug text-mute">{shown.blurb}</p>
                 <ul className="mt-3 flex flex-wrap gap-x-4 gap-y-1.5">
                   {shown.projects.map((p) => (

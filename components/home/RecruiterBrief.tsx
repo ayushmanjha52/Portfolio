@@ -22,7 +22,7 @@ export function RecruiterBrief() {
     <section id="about" aria-labelledby="about-title" className="rec-only border-t border-line">
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="flex flex-wrap items-baseline justify-between gap-3">
-          <h2 id="about-title" className="font-mono text-[11px] uppercase tracking-[0.22em] text-signal">
+          <h2 id="about-title" className="display text-[2.4rem] leading-none text-paper">
             The 30-second brief
           </h2>
           <p className="font-mono text-[10.5px] uppercase tracking-[0.18em] text-faint">
@@ -36,7 +36,7 @@ export function RecruiterBrief() {
               <Portrait size={72} />
               <div>
                 <p className="font-mono text-[10.5px] uppercase tracking-[0.2em] text-faint">Who</p>
-                <p className="mt-1 text-[17px] font-medium text-paper">{profile.name}</p>
+                <p className="mt-1 font-serif text-[1.7rem] leading-none text-paper">{profile.name}</p>
                 <a href={profile.phoneHref} className="text-[13px] text-mute hover:text-paper">
                   {profile.phone}
                 </a>
@@ -93,21 +93,21 @@ export function RecruiterBrief() {
               <a
                 href={profile.resumePdf}
                 download
-                className="inline-flex items-center gap-1.5 rounded-full bg-signal px-4 py-2 font-mono text-[11px] uppercase tracking-[0.14em] text-ink"
+                className="inline-flex items-center gap-1.5 rounded-full bg-signal px-4 py-2 text-[14px] font-medium text-ink"
               >
                 <Download aria-hidden="true" className="size-3.5" />
                 Resume
               </a>
               <a
                 href={`mailto:${profile.email}`}
-                className="inline-flex items-center gap-1.5 rounded-full border border-line-strong px-4 py-2 font-mono text-[11px] uppercase tracking-[0.14em] text-paper"
+                className="inline-flex items-center gap-1.5 rounded-full border border-line-strong px-4 py-2 text-[14px] font-medium text-paper"
               >
                 Email
                 <ArrowUpRight aria-hidden="true" className="size-3.5" />
               </a>
               <a
                 href={profile.phoneHref}
-                className="inline-flex items-center gap-1.5 rounded-full border border-line-strong px-4 py-2 font-mono text-[11px] uppercase tracking-[0.14em] text-paper"
+                className="inline-flex items-center gap-1.5 rounded-full border border-line-strong px-4 py-2 text-[14px] font-medium text-paper"
               >
                 <Phone aria-hidden="true" className="size-3.5" />
                 Call

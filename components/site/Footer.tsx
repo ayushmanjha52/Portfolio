@@ -6,7 +6,7 @@ export function Footer() {
     <footer className="border-t border-line">
       <div className="mx-auto grid max-w-7xl gap-8 px-4 py-12 sm:px-6 md:grid-cols-[1.4fr_1fr_1fr] lg:px-8">
         <div>
-          <p className="font-mono text-[12px] uppercase tracking-[0.2em] text-paper">{profile.name}</p>
+          <p className="font-serif text-[26px] leading-none text-paper">{profile.name}</p>
           <p className="mt-2 text-sm text-mute">{profile.headline}.</p>
           <p className="mt-6 max-w-sm text-xs leading-relaxed text-faint">
             Every project claim on this site was checked against its public repository in October 2026. Where a
